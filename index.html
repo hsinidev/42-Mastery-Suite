@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Metadata -->
+    <title>42 Mastery Suite | Ultimate Coding & Algorithm Games</title>
+    <meta name="description" content="Master computer science concepts with the 42 Mastery Suite. 14 gamified modules covering Algorithms, Networking, Data Structures, Bash, and more. Play now on doodax.com.">
+    <meta name="keywords" content="42 school, coding games, algorithm visualization, network simulation, learn bash, data structures, dynamic programming, react game">
+    <meta name="author" content="Hsini Mohamed">
+    <meta property="og:title" content="42 Mastery Suite - Gamified CS Education">
+    <meta property="og:description" content="Interactive training for the 42 Network curriculum. Master complex topics through play.">
+    <meta property="og:image" content="https://doodax.com/og-image.jpg">
+    <meta property="og:url" content="https://doodax.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ['"JetBrains Mono"', 'monospace'],
+              sans: ['"Inter"', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                dark: '#0f172a',
+                gold: '#FFD700',
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        background: #000;
+        overflow-x: hidden;
+        font-family: 'Inter', sans-serif;
+      }
+
+      /* --- Galaxy Background Animation --- */
+      .galaxy-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(to bottom, #020111 0%, #0b0e28 100%);
+        overflow: hidden;
+      }
+
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        box-shadow: 
+          100px 200px #FFF, 400px 500px #FFF, 600px 100px #FFF, 
+          800px 300px #FFF, 200px 700px #FFF, 1100px 400px #FFF,
+          1200px 100px #FFF, 1500px 600px #FFF;
+        animation: animateStars 50s linear infinite;
+        opacity: 0.6;
+      }
+      
+      .stars::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        box-shadow: 
+          150px 300px #FFF, 550px 100px #FFF, 750px 400px #FFF, 
+          900px 150px #FFF, 300px 500px #FFF, 1300px 700px #FFF;
+        opacity: 0.4;
+      }
+
+      .nebula {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: 
+          radial-gradient(circle at 50% 50%, rgba(76, 29, 149, 0.2), transparent 60%),
+          radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.15), transparent 50%),
+          radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.15), transparent 50%);
+        filter: blur(60px);
+        animation: rotateNebula 120s linear infinite;
+      }
+
+      @keyframes animateStars {
+        from { transform: translateY(0px); }
+        to { transform: translateY(-2000px); }
+      }
+
+      @keyframes rotateNebula {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f172a; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3b82f6; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div class="galaxy-container">
+      <div class="nebula"></div>
+      <div class="stars"></div>
+    </div>
+    <div id="root"></div>
+  </body>
+</html>
